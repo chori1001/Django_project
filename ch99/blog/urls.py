@@ -10,5 +10,6 @@ urlpatterns = [
     path('archive/<int:year>/', views.PostYAV.as_view(), name='post_year_archive'),
     path('archive/<int:year>/<str:month>/', views.PostMAV.as_view(), name='post_month_archive'),
     path('archive/<int:year>/<str:month>/<int:day>/', views.PostDAV.as_view(), name='post_day_archive'),
+    #re_path(r'^archive/(?P<year>\d{4})/(?P<month>[a-z]{3})/(?P<day>\d{1,2})/$', views.PostDAV.as_view(), name ='post_day_archive'),
     path('archive/today/', views.PostTAV.as_view(), name='post_today_archive'),
 ]
