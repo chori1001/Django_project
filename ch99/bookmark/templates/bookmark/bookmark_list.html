@@ -1,21 +1,46 @@
-<!DOCTYPE html>
-<html>
-<head>
-<title>Django Bookmark List</title>
-</head>
+{% extends 'base.html' %}
 
+{% load static %}
 
-<body>
+{% block title %} Django Bookmark List {% endblock %}
 
+{% block header %}
+  <header class="masthead" style="background-image: url({% static 'img/home-bg.jpg' %}">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="site-heading">
+            <h1>안녕하세요?</h1>
+            <span class="subheading">롯데자이언츠 화이팅</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+{% endblock %}
+
+{% block content %}
 <div id="'content">
-    <h1>Bookmark List</h1>
+    <h1>　리스트</h1>
 
     <ul>
         {% for bookmark in object_list %}
-            <li><a href = "{% url 'detail' bookmark.id %}">{{ bookmark }}</a></li>
+            <li><a href = "{% url 'bookmark:detail' bookmark.id %}">{{ bookmark }}</a></li>
         {% endfor %}
     </ul>
 </div>
+{% endblock %}
 
-</body>
+
+
+
+#<!DOCTYPE html>
+#<html>
+#<head>
+#<title>Django Bookmark List</title>.
+#</head>
+#<body>
+#</body>
+
 </html>

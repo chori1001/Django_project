@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}home.html {% endblock %}
+
+{% block header %}
+  <header class="masthead" style="background-image: url({% static 'img/home-bg.jpg' %}">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="site-heading">
+            <h1>포항스틸러스 우승</h1>
+            <span class="subheading">롯데도 우승했으면 좋겠습니다.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+{% endblock %}
+
+{% block content %}{% endblock %}
+
+{% block extra-script %}{% endblock %}
