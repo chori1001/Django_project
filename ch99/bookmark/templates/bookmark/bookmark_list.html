@@ -12,7 +12,7 @@
         <div class="col-lg-8 col-md-10 mx-auto">
           <div class="site-heading">
             <h1>안녕하세요?</h1>
-            <span class="subheading">롯데자이언츠 화이팅</span>
+            <span class="subheading">안녕히 계세요.</span>
           </div>
         </div>
       </div>
@@ -21,6 +21,7 @@
 {% endblock %}
 
 {% block content %}
+<div class="container position-c">
 <div id="'content">
     <h1>　리스트</h1>
 
@@ -29,6 +30,7 @@
             <li><a href = "{% url 'bookmark:detail' bookmark.id %}">{{ bookmark }}</a></li>
         {% endfor %}
     </ul>
+</div>
 </div>
 {% endblock %}
 

@@ -1,13 +1,32 @@
-<h1>Blog List</h1>
-<br>
+{% extends 'base.html' %}
 
+{% load static %}
+
+{% block title %} Blog List {% endblock %}
+
+{% block header %}
+  <header class="masthead" style="background-image: url({% static 'img/2.jpg' %}">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="site-heading">
+            <h1>안녕하세요?</h1>
+            <span class="subheading">안녕히 계세요.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+{% endblock %}
+
+{% block content %}
+<div class="container position-c">
 {% for post in posts %}
     <h3><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></h3>
     {{ post.modify_dt|date:"N d, Y" }}
     <p>{{ post.description }}</p>
 {% endfor %}
-
-<br>
 
 <div>
     <span>
@@ -22,3 +41,8 @@
         {% endif %}
     </span>
 </div>
+    </div>
+{% endblock %}
+
+
+

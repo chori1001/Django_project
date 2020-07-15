@@ -1,3 +1,27 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %} Blog List {% endblock %}
+
+{% block header %}
+  <header class="masthead" style="background-image: url({% static 'img/2.jpg' %}">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="site-heading">
+            <h1>안녕하세요?</h1>
+            <span class="subheading">안녕히 계세요.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+{% endblock %}
+
+{% block content %}
+<div class="container position-c">
 <h1>Post Archives for {{ month|date:"N, Y" }}</h1>
 
 <div>
@@ -8,3 +32,7 @@
         {% endfor %}
     </ul>
 </div>
+</div>
+{% endblock %}
+
+
