@@ -3,30 +3,30 @@
 
 {% block title %}logged_out.html{% endblock %}
 {% block header %}
-  <header class="masthead" style="background-image: url({% static 'img/2.jpg' %}">
+<header class="masthead" style="background-image: url({% static 'img/2.jpg' %}">
     <div class="overlay"></div>
     <div class="container">
-      <div class="row">
-        <div class="col-lg-8 col-md-10 mx-auto">
-          <div class="site-heading">
-            <h1>로그인을 하시옵소서 전하./h1>
+        <div class="row">
+            <div class="col-lg-8 col-md-10 mx-auto">
+                <div class="site-heading">
+                    <h1>로그인을 하소서</h1>
+                </div>
             </div>
         </div>
-      </div>
     </div>
-  </header>
+</header>
 {% endblock %}
 {% block content %}
 
-    <h1>Logged out</h1>
-    <br>
+<h1>Logged out</h1>
+<br>
 
-    <div>
-        <i class="fas fa-quote-left"></i>
-        <span class="h6">&ensp;Thanks for spending your quality time with this web site today.&ensp;</span>
-        <i class="fas fa-quote-right"></i>
-    </div>
+<div>
+    <i class="fas fa-quote-left"></i>
+    <span class="h6">&ensp;Thanks for spending your quality time with this web site today.&ensp;</span>
+    <i class="fas fa-quote-right"></i>
+</div>
 
-    <p class="font-italic"><a href="{% url 'login' %}">Log in again</a></p>
+<p class="font-italic"><a href="{% url 'login' %}">Log in again</a></p>
 
 {% endblock %}
