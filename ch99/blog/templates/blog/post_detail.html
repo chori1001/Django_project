@@ -2,7 +2,18 @@
 
 {% load static %}
 
-{% block title %} Blog List {% endblock %}
+{% block title %} post_detail.html {% endblock %}
+
+{% block extra-style %}
+<style>
+.post-body {
+    width: 80%;
+    margin: auto;
+    font-family: "Lucida Grande", Verdana, Arial, sans-serif;
+    font-size: 16px;
+}
+</style>
+{% endblock extra-style %}
 
 {% block header %}
   <header class="masthead" style="background-image: url({% static 'img/2.jpg' %}">
@@ -21,7 +32,11 @@
 {% endblock %}
 
 {% block content %}
-<div class="container position-c">
+<div class="container">
+<div class="row">
+  <div class="col-lg-8 col-md-10 mx-auto">
+
+<div class="post-body">
 <h2>{{ object.title }}</h2>
 
 <p>
@@ -55,8 +70,30 @@
         <a href="{% url 'blog:tagged_object_list' tag.name %}">{{tag.name}}</a>
         {% endfor %}
         &emsp;
-        <a href=""{% url 'blog:tag_cloud' %}><span class="btn btn-info btn-sm">TagCloud</span></a>
+        <a href="{% url 'blog:tag_cloud' %}"><span class="btn btn-info btn-sm">TagCloud</span></a>
+    </div>
+    <br>
+    <div id="disqus_thread"></div>
+
     </div>
 {% endblock %}
 
+   {% block extra-script %}
 
+    <script>
+
+    var disqus_config = function () {
+        this.page.url = '{{disqus_url}}';
+        this.page.identifier = '{{disqus_id}}';
+    };
+
+    (function() { // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
+        s.src = 'https://django-web-programming-2.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+    {% endblock %}

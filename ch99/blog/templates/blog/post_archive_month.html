@@ -2,7 +2,7 @@
 
 {% load static %}
 
-{% block title %} Blog List {% endblock %}
+{% block title %} post_archive_month {% endblock %}
 
 {% block header %}
   <header class="masthead" style="background-image: url({% static 'img/2.jpg' %}">
@@ -21,7 +21,9 @@
 {% endblock %}
 
 {% block content %}
-<div class="container position-c">
+<div class="container">
+<div class="row">
+  <div class="col-lg-8 col-md-10 mx-auto">
 <h1>Post Archives for {{ month|date:"N, Y" }}</h1>
 
 <div>

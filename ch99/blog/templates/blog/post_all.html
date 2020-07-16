@@ -2,7 +2,7 @@
 
 {% load static %}
 
-{% block title %} Blog List {% endblock %}
+{% block title %} post_all.html {% endblock %}
 
 {% block header %}
   <header class="masthead" style="background-image: url({% static 'img/2.jpg' %}">
@@ -20,24 +20,32 @@
   </header>
 {% endblock %}
 
+
+
 {% block content %}
-<div class="container position-c">
+<div class="container">
+<div class="row">
+  <div class="col-lg-8 col-md-10 mx-auto">
 {% for post in posts %}
     <h3><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></h3>
     {{ post.modify_dt|date:"N d, Y" }}
     <p>{{ post.description }}</p>
 {% endfor %}
 
-<div>
+<div class="previous_page">
     <span>
         {% if page_obj.has_previous %}
-            <a href="?page={{ page_obj.previous_page_number }}">PreviousPage</a>
+        <a href="?page={{ page_obj.previous_page_number }}"><span class="btn btn-danger btn-sm">이전페이지</span></a>
         {% endif %}
+    </span>
+</div>
 
-        Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}
+<br>
 
+<div class="next_page">
+    <span>
         {% if page_obj.has_next %}
-            <a href="?page={{ page_obj.next_page_number }}">NextPage</a>
+        <a href="?page={{ page_obj.next_page_number }}"><span class="btn btn-success btn-sm">다음페이지</span></a>
         {% endif %}
     </span>
 </div>

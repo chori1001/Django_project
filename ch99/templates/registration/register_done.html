@@ -1,0 +1,29 @@
+{% extends "base.html" %}{% load static %}
+
+
+{% block title %}register_done.html{% endblock %}
+{% block header %}
+  <header class="masthead" style="background-image: url({% static 'img/2.jpg' %}">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="site-heading">
+            <h1>가입이 완료되었소.</h1>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+{% endblock %}
+{% block content %}
+
+    <h1>Registration Completed Successfully</h1> 
+    <br>
+
+    <p>Thank you for registering.</p> 
+
+    <p class="font-italic"><a href="{% url 'login' %}">Log in</a> </p>  
+
+{% endblock %}

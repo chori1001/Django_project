@@ -23,6 +23,6 @@ class Post(models.Model) :
         return reverse('blog:post_detail', args=(self.slug,))
     def get_previous(self):
         return self.get_previous_by_modify_dt()
-    def get_nex(self):
+    def get_next(self):
         return self.get_next_by_modify_dt()
 
