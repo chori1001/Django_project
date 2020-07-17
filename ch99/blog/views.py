@@ -7,7 +7,7 @@ from blog.models import Post
 from django.conf import settings
 from django.views.generic import FormView
 from blog.forms import PostSearchForm
-from django.views.generic import CreateView, UpdateView, DetailView
+from django.views.generic import CreateView, UpdateView, DeleteView
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.urls import reverse_lazy
 from mysite.views import OwnerOnlyMixin
@@ -109,6 +109,6 @@ class PostUpdateView(LoginRequiredMixin, UpdateView):
     fields = ['title', 'slug','description','content','tags']
     success_url = reverse_lazy('blog:index')
 
-class PostDeleteView(LoginRequiredMixin, DetailView):
+class PostDeleteView(LoginRequiredMixin, DeleteView):
     model = Post
     success_url = reverse_lazy('blog:index')

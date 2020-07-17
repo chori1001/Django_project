@@ -30,145 +30,109 @@
 
 
 
-  <!-- Navigation -->
-  <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
-    <div class="container">
-      <a class="navbar-brand" href="https://ko.dict.naver.com/#/entry/koko/2d5f73c666aa4a4ba0e2ff24a8c09adc">눌러보세요.</a>
-      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-        Menu
-        <i class="fas fa-bars"></i>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarResponsive">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item">
-            <a class="nav-link" href={% url 'home' %}>홈</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href={% url 'blog:search' %}>검색</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href={% url 'bookmark:index' %}>북마크</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href={% url 'blog:index' %}>블로그</a>
-          </li>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href={% url 'photo:index' %}>사진</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href={% url 'admin:index' %}>운영자</a>
-          </li>
-          <li class="nav-item dropdown mx-1">
-            <a class="nav-link dropdown-toggle text-white" href="#" data-toggle="dropdown">Add</a>
-            <div class="dropdown-menu">
-              <a class="dropdown-item" href="{% url 'bookmark:add' %}">Bookmark</a>
-              <a class="dropdown-item" href="{% url 'blog:add' %}">Post</a>
-              <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="">Album</a>
-              <a class="dropdown-item" href="">Photo</a>
-            </div>
-          </li>
-          <li class="nav-item dropdown mx-1">
-            <a class="nav-link dropdown-toggle text-white" href="#" data-toggle="dropdown">Change</a>
-            <div class="dropdown-menu">
-              <a class="dropdown-item" href="{% url 'bookmark:change' %}">Bookmark</a>
-              <a class="dropdown-item" href="{% url 'blog:change' %}">Post</a>
-              <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="">Album</a>
-              <a class="dropdown-item" href="">Photo</a>
-            </div>
-          </li>
-          <li class="nav-item dropdown">
-            {% if user.is_active %}
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <i class=fas fa-user"></i>&ensp;내려가지롱&ensp;</a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="{% url 'logout' %}">Logout</a>
-              <a class="dropdown-item" href="{% url 'password_change' %}">Change</a>
-            <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="{% url 'blog:index' %}">글</a>
-              <a class="dropdown-item" href="{% url 'blog:post_archive' %}">Archive</a>
-              <a class="dropdown-item" href="{% url 'blog:post_year_archive' 　2020 %}">Month Archive</a>
-            <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="https://naver.com">네이버</a>
-              <a class="dropdown-item" href="https://google.com">구글</a>
-              <a class="dropdown-item" href="https://daum.net">다음</a>
-            </div>
-            {% else %}
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              <i class="fas fa-user"></i>&ensp;내려가지롱&ensp;</a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="{% url 'login' %}">Login</a>
-              <a class="dropdown-item" href="{% url 'register' %}">Register</a>
-              <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="{% url 'blog:index' %}">글</a>
-              <a class="dropdown-item" href="{% url 'blog:post_archive' %}">Archive</a>
-              <a class="dropdown-item" href="{% url 'blog:post_year_archive' 　2020 %}">Month Archive</a>
-            <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="https://naver.com">네이버</a>
-              <a class="dropdown-item" href="https://google.com">구글</a>
-              <a class="dropdown-item" href="https://daum.net">다음</a>
-            </div>
-            {% endif %}
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg bg-dark navbar-light fixed-top" id="mainNav">
+  <a class="navbar-brand" href="https://www.steelers.co.kr/">
+    <img src ="{% static 'img/포항.jpg' %}" alt = "Logo" style="width:50px;">
+  </a>
+  <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+    Menu
+    <i class="fas fa-bars"></i>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarResponsive">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item">
+        <a class="nav-link" href={% url 'home' %}>홈</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href={% url 'blog:search' %}>검색</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href={% url 'bookmark:index' %}>북마크</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href={% url 'blog:index' %}>글</a>
+      </li>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href={% url 'photo:index' %}>사진</a>
+      <li class="nav-item dropdown mx-1">
+        <a class="nav-link dropdown-toggle text-white" href="#" data-toggle="dropdown">Add</a>
+        <div class="dropdown-menu">
+          <a class="dropdown-item" href="{% url 'bookmark:add' %}">Bookmark</a>
+          <a class="dropdown-item" href="{% url 'blog:add' %}">Post</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="{% url 'photo:album_add' %}">Album</a>
+          <a class="dropdown-item" href="{% url 'photo:photo_add' %}">Photo</a>
 
-  <!-- Page Header -->
-  {% block header %}
-  {% endblock %}
-
-  <!-- Main Content -->
-  {% block content %}{% endblock %}
-
-
-  <!-- Footer -->
-  <footer>
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-8 col-md-10 mx-auto">
-          <ul class="list-inline text-center">
-            <li class="list-inline-item">
-              <a href="https://www.twitter.com">
-                <span class="fa-stack fa-lg">
-                  <i class="fas fa-circle fa-stack-2x"></i>
-                  <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
-                </span>
-              </a>
-            </li>
-            <li class="list-inline-item">
-              <a href="https://www.facebook.com">
-                <span class="fa-stack fa-lg">
-                  <i class="fas fa-circle fa-stack-2x"></i>
-                  <i class="fab fa-facebook-f fa-stack-1x fa-inverse"></i>
-                </span>
-              </a>
-            </li>
-            <li class="list-inline-item">
-              <a href="https://www.github.com">
-                <span class="fa-stack fa-lg">
-                  <i class="fas fa-circle fa-stack-2x"></i>
-                  <i class="fab fa-github fa-stack-1x fa-inverse"></i>
-                </span>
-              </a>
-            </li>
-          </ul>
-          <p class="copyright text-muted">신민철 연습용..^^</p>
+      </li>
+      <li class="nav-item dropdown mx-1">
+        <a class="nav-link dropdown-toggle text-white" href="#" data-toggle="dropdown">Change</a>
+        <div class="dropdown-menu">
+          <a class="dropdown-item" href="{% url 'bookmark:change' %}">Bookmark</a>
+          <a class="dropdown-item" href="{% url 'blog:change' %}">Post</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="{% url 'photo:album_change' %}">Album</a>
+          <a class="dropdown-item" href="{% url 'photo:photo_change' %}">Photo</a>
         </div>
-      </div>
-    </div>
-  </footer>
+      </li>
+      <li class="nav-item dropdown">
+        {% if user.is_active %}
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <i class=fas fa-user"></i>&ensp;내려가지롱&ensp;</a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="{% url 'logout' %}">Logout</a>
+          <a class="dropdown-item" href="{% url 'password_change' %}">Change</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="{% url 'blog:index' %}">글</a>
 
-  <!-- Bootstrap core JavaScript -->
-  <script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
-  <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="https://naver.com">네이버</a>
+          <a class="dropdown-item" href="https://google.com">구글</a>
+          <a class="dropdown-item" href="https://daum.net">다음</a>
+        </div>
+        {% else %}
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <i class="fas fa-user"></i>&ensp;내려가지롱&ensp;</a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="{% url 'login' %}">Login</a>
+          <a class="dropdown-item" href="{% url 'register' %}">Register</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="{% url 'blog:index' %}">글</a>
+          <a class="dropdown-item" href="{% url 'blog:post_archive' %}">Archive</a>
+          <a class="dropdown-item" href="{% url 'blog:post_year_archive' 　2020 %}">Month Archive</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="https://naver.com">네이버</a>
+          <a class="dropdown-item" href="https://google.com">구글</a>
+          <a class="dropdown-item" href="https://daum.net">다음</a>
+        </div>
+        {% endif %}
+      </li>
+    </ul>
+  </div>
+  </div>
+</nav>
 
-  <!-- Custom scripts for this template -->
-  <script src="{% static 'js/clean-blog.min.js' %}"></script>
-  {% block extra-script %}{% endblock %}
+<!-- Page Header -->
+{% block header %}
+{% endblock %}
+
+<!-- Main Content -->
+{% block content %}{% endblock %}
+
+
+<!-- Footer -->
+
+
+<!-- Bootstrap core JavaScript -->
+<script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
+<script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+
+<!-- Custom scripts for this template -->
+<script src="{% static 'js/clean-blog.min.js' %}"></script>
+{% block extra-script %}{% endblock %}
 </body>
 
 </html>
+
+

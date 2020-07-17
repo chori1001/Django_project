@@ -1,7 +1,7 @@
+
 {% extends "base.html" %}{% load static %}
 
-
-{% block title %}post_confirm_delete.html{% endblock %}
+{% block title %}photo_confirm_delete.html{% endblock %}
 {% block header %}
 <header class="masthead" style="background-image: url({% static 'img/2.jpg' %}">
     <div class="overlay"></div>
@@ -16,13 +16,14 @@
     </div>
 </header>
 {% endblock %}
+
 {% block content %}
 
-<h1>Post Delete</h1>
+<h1>Photo Delete</h1>
 <br>
 
 <form action="." method="post">{% csrf_token %}
-    <p>정말로 삭제하실거에요??? "{{ object }}" ?</p>
+    <p>정말로 삭제하실거에요???"{{ object }}" ?</p>
     <input type="submit" value="클릭!" class="btn btn-danger btn-sm" />
 </form>
 

@@ -3,7 +3,7 @@
 
 from django.views.generic import ListView, DetailView
 from bookmark.models import Bookmark
-from django.views.generic import CreateView, UpdateView, DetailView
+from django.views.generic import CreateView, UpdateView, DeleteView
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.urls import reverse_lazy
 from mysite.views import OwnerOnlyMixin
@@ -34,6 +34,6 @@ class BookmarkUpdateView(LoginRequiredMixin, UpdateView):
     fields = ['title', 'url']
     success_url = reverse_lazy('bookmark:index')
 
-class BookmarkDeleteView(LoginRequiredMixin, DetailView):
+class BookmarkDeleteView(LoginRequiredMixin, DeleteView):
     model = Bookmark
     success_url = reverse_lazy('bookmark:index')

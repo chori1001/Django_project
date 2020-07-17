@@ -3,49 +3,49 @@
 {% block title %}bookmark_change_list.html{% endblock %}
 
 {% block header %}
-  <header class="masthead" style="background-image: url({% static 'img/2.jpg' %}">
+<header class="masthead" style="background-image: url({% static 'img/2.jpg' %}">
     <div class="overlay"></div>
     <div class="container">
-      <div class="row">
-        <div class="col-lg-8 col-md-10 mx-auto">
-          <div class="site-heading">
-            <h1>수정하시려구요?</h1>
-          </div>
+        <div class="row">
+            <div class="col-lg-10 col-md-10 mx-auto">
+                <div class="site-heading">
+                    <h1>수정하시려구요?</h1>
+                </div>
+            </div>
         </div>
-      </div>
     </div>
-  </header>
+</header>
 {% endblock %}
 
 {% block content %}
 
-    <h1>Bookmark Change - {{user}}</h1>
-    <br>
+<h1>Bookmark Change - {{user}}</h1>
+<br>
 
-    <table class="table table-bordered table-condensed table-striped">
+<table class="table table-bordered table-condensed table-striped">
 
-        <thead>
-            <tr class="table-primary">
-                <th>Title</th>
-                <th>Url</th>
-                <th>Owner</th>
-                <th>Update</th>
-                <th>Delete</th>
-            </tr>
-        </thead>
+    <thead>
+    <tr class="table-primary">
+        <th>Title</th>
+        <th>Url</th>
+        <th>Owner</th>
+        <th>Update</th>
+        <th>Delete</th>
+    </tr>
+    </thead>
 
-        <tbody>
-            {% for item in object_list %}
-            <tr>
-                <td>{{ item.title }}</td>
-                <td>{{ item.url }}</td>
-                <td>{{ item.owner }}</td>
-                <td><a href="{% url 'bookmark:update' item.id %}">Update</a></td>
-                <td><a href="{% url 'bookmark:delete' item.id %}">Delete</a></td>
-            </tr>
-            {% endfor %}
-        </tbody>
+    <tbody>
+    {% for item in object_list %}
+    <tr>
+        <td>{{ item.title }}</td>
+        <td>{{ item.url }}</td>
+        <td>{{ item.owner }}</td>
+        <td><a href="{% url 'bookmark:update' item.id %}">Update</a></td>
+        <td><a href="{% url 'bookmark:delete' item.id %}">Delete</a></td>
+    </tr>
+    {% endfor %}
+    </tbody>
 
-    </table>
+</table>
 
 {% endblock %}

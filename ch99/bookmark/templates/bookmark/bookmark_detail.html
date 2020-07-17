@@ -5,34 +5,34 @@
 {% block title %} Django Bookmark List {% endblock %}
 
 {% block header %}
-  <header class="masthead" style="background-image: url({% static 'img/2.jpg' %}">
+<header class="masthead" style="background-image: url({% static 'img/2.jpg' %}">
     <div class="overlay"></div>
     <div class="container">
-      <div class="row">
-        <div class="col-lg-8 col-md-10 mx-auto">
-          <div class="site-heading">
-            <h1>리스트 상세내용.</h1>
-          </div>
+        <div class="row">
+            <div class="col-lg-10 col-md-10 mx-auto">
+                <div class="site-heading">
+                    <h1>리스트 상세내용.</h1>
+                </div>
+            </div>
         </div>
-      </div>
     </div>
-  </header>
+</header>
 {% endblock %}
 
 {% block content %}
 <div class="container">
-<div id="content">
+    <div id="content">
 
-    <h1>{{ object.title }}</h1>
+        <h1>{{ object.title }}</h1>
 
-    <ul>
-        <li>URL : <a href = "{{ object.url }}">{{ object.url }}</a></li>
-    </ul>
+        <ul>
+            <li>URL : <a href = "{{ object.url }}">{{ object.url }}</a></li>
+        </ul>
 
 
-</div>
+    </div>
 
-</body>
-<br>
-</html>
-{% endblock %}
+    </body>
+    <br>
+    </html>
+    {% endblock %}

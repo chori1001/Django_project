@@ -2,24 +2,60 @@
 
 {% load static %}
 
-{% block title %}home.html {% endblock %}
+{% block title %}home.html{% endblock %}
 
 {% block header %}
-  <header class="masthead" style="background-image: url({% static 'img/2.jpg' %}">
-    <div class="overlay"></div>
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-8 col-md-10 mx-auto">
-          <div class="site-heading">
+<header class="masthead" style="background-image: url({% static 'img/2.jpg' %}">
+  <div class="overlay"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-10 col-md-10 mx-auto">
+        <div class="site-heading">
           <h1>포항스틸러스 우승!!</h1>
 
-            <span class="subheading">롯데도 우승했으면 좋겠습니다.</span>
-          </div>
+          <span class="subheading">Again 2013, We are Steelers !</span>
         </div>
       </div>
     </div>
+  </div>
 
-  </header>
+</header>
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        <ul class="list-inline text-center">
+          <li class="list-inline-item">
+            <a href="https://www.twitter.com">
+                <span class="fa-stack fa-lg">
+                  <i class="fas fa-circle fa-stack-2x"></i>
+                  <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
+                </span>
+            </a>
+          </li>
+          <li class="list-inline-item">
+            <a href="https://www.facebook.com">
+                <span class="fa-stack fa-lg">
+                  <i class="fas fa-circle fa-stack-2x"></i>
+                  <i class="fab fa-facebook-f fa-stack-1x fa-inverse"></i>
+                </span>
+            </a>
+          </li>
+          <li class="list-inline-item">
+            <a href="https://www.github.com">
+                <span class="fa-stack fa-lg">
+                  <i class="fas fa-circle fa-stack-2x"></i>
+                  <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                </span>
+            </a>
+          </li>
+        </ul>
+        <p class="copyright text-muted">신민철 연습용..^^</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
 {% endblock %}
 
 {% block content %}{% endblock %}

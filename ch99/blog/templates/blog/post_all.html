@@ -5,51 +5,56 @@
 {% block title %} post_all.html {% endblock %}
 
 {% block header %}
-  <header class="masthead" style="background-image: url({% static 'img/2.jpg' %}">
+<header class="masthead" style="background-image: url({% static 'img/2.jpg' %}">
     <div class="overlay"></div>
     <div class="container">
-      <div class="row">
-        <div class="col-lg-8 col-md-10 mx-auto">
-          <div class="site-heading">
-            <h1>글</h1>
-          </div>
+        <div class="row">
+            <div class="col-lg-10 col-md-10 mx-auto">
+                <div class="site-heading">
+                    <h1>글</h1>
+                    <span class="subheading">재밌게 읽으세요.</span>
+                </div>
+            </div>
         </div>
-      </div>
     </div>
-  </header>
+</header>
 {% endblock %}
 
 
 
 {% block content %}
 <div class="container">
-<div class="row">
-  <div class="col-lg-8 col-md-10 mx-auto">
-{% for post in posts %}
-    <h3><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></h3>
-    {{ post.modify_dt|date:"N d, Y" }}
-    <p>{{ post.description }}</p>
-{% endfor %}
+    <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+            {% for post in posts %}
+            <h3><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></h3>
+            {{ post.modify_dt|date:"N d, Y" }}
+            <p>{{ post.description }}</p>
+            {% endfor %}
 
-<div class="previous_page">
+            <div>
+                <style>
+    .next_page {position:absolute;right:0;opacity:7;}
+    .previous_page {position:absolute;top:10;right:5;opacity:7;}
+</style>
+                <div class="container">
+                    <div class="previous_page">
     <span>
         {% if page_obj.has_previous %}
         <a href="?page={{ page_obj.previous_page_number }}"><span class="btn btn-danger btn-sm">이전페이지</span></a>
         {% endif %}
     </span>
-</div>
+                    </div>
 
-<br>
-
-<div class="next_page">
+                    <div class="next_page">
     <span>
         {% if page_obj.has_next %}
         <a href="?page={{ page_obj.next_page_number }}"><span class="btn btn-success btn-sm">다음페이지</span></a>
         {% endif %}
     </span>
-</div>
-    </div>
-{% endblock %}
 
+                        {% endblock %}
 
-
+                    </div>
+                </div>
+            </div>

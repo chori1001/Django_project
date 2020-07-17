@@ -16,71 +16,71 @@
 {% endblock extra-style %}
 
 {% block header %}
-  <header class="masthead" style="background-image: url({% static 'img/2.jpg' %}">
+<header class="masthead" style="background-image: url({% static 'img/2.jpg' %}">
     <div class="overlay"></div>
     <div class="container">
-      <div class="row">
-        <div class="col-lg-8 col-md-10 mx-auto">
-          <div class="site-heading">
-            <h1>안녕하세요?</h1>
-            <span class="subheading">안녕히 계세요.</span>
-          </div>
+        <div class="row">
+            <div class="col-lg-10 col-md-10 mx-auto">
+                <div class="site-heading">
+                    <h1>안녕하세요?</h1>
+                    <span class="subheading">안녕히 계세요.</span>
+                </div>
+            </div>
         </div>
-      </div>
     </div>
-  </header>
+</header>
 {% endblock %}
 
 {% block content %}
 <div class="container">
-<div class="row">
-  <div class="col-lg-8 col-md-10 mx-auto">
+    <div class="row">
+        <div class="col-lg-10 col-md-10 mx-auto">
 
-<div class="post-body">
-<h2>{{ object.title }}</h2>
+            <div class="post-body">
+                <h2>{{ object.title }}</h2>
 
-<p>
-    {% if object.get_previous %}
-    <a href="{{ object.get_previous.get_absolute_url }}" title="View previous post">
-        &laquo;-- {{ object.get_previous }}
-    </a>
-    {% endif %}
+                <p>
+                    {% if object.get_previous %}
+                    <a href="{{ object.get_previous.get_absolute_url }}" title="View previous post">
+                        &laquo;-- {{ object.get_previous }}
+                    </a>
+                    {% endif %}
 
-    {% if object.get_next %}
-    | <a href="{{ object.get_next.get_absolute_url }}" title="View next post">
-    {{ object.get_next }} --&raquo;
-    </a>
-    {% endif %}
-</p>
+                    {% if object.get_next %}
+                    | <a href="{{ object.get_next.get_absolute_url }}" title="View next post">
+                    {{ object.get_next }} --&raquo;
+                </a>
+                    {% endif %}
+                </p>
 
-<p>{{ object.modify_dt|date:"j F Y" }}</p>
-<br>
+                <p>{{ object.modify_dt|date:"j F Y" }}</p>
+                <br>
 
-<div>
-    {{ object.content|linebreaks }}
-</div>
-    <div/>
+                <div>
+                    {{ object.content|linebreaks }}
+                </div>
+                <div/>
 
-    <br>
-    <div>
-        <b>TAGS</b> <i class="fas fa-tag"></i>
-        {% load taggit_templatetags2_tags %}
-        {% get_tags_for_object object as "tags" %}
-        {% for tag in tags %}
-        <a href="{% url 'blog:tagged_object_list' tag.name %}">{{tag.name}}</a>
-        {% endfor %}
-        &emsp;
-        <a href="{% url 'blog:tag_cloud' %}"><span class="btn btn-info btn-sm">TagCloud</span></a>
-    </div>
-    <br>
-    <div id="disqus_thread"></div>
+                <br>
+                <div>
+                    <b>TAGS</b> <i class="fas fa-tag"></i>
+                    {% load taggit_templatetags2_tags %}
+                    {% get_tags_for_object object as "tags" %}
+                    {% for tag in tags %}
+                    <a href="{% url 'blog:tagged_object_list' tag.name %}">{{tag.name}}</a>
+                    {% endfor %}
+                    &emsp;
+                    <a href="{% url 'blog:tag_cloud' %}"><span class="btn btn-info btn-sm">TagCloud</span></a>
+                </div>
+                <br>
+                <div id="disqus_thread"></div>
 
-    </div>
-{% endblock %}
+            </div>
+            {% endblock %}
 
-   {% block extra-script %}
+            {% block extra-script %}
 
-    <script>
+            <script>
 
     var disqus_config = function () {
         this.page.url = '{{disqus_url}}';
@@ -94,6 +94,6 @@
         (d.head || d.body).appendChild(s);
     })();
     </script>
-    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+            <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 
-    {% endblock %}
+            {% endblock %}
